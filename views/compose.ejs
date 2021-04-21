@@ -1,0 +1,50 @@
+
+
+<%- include("partials/header"); -%>
+
+
+
+
+<h1> Compose</h1>
+
+<form class = "textInput" action = "/compose" method = "post"><!-- a form needs to be done to actually get a post request to our server -->
+    <div class="form-group">
+        <label for="titleLine">Title</label>
+        <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="postTitle" value=""> <!-- user types in a value here -->
+    </div>   
+    <div class="form-group">
+        <label for="postBox">Post</label>
+        <textarea id="exampleInputEmail1"class="form-control" name="postBody" rows="4" cols="50"></textarea>
+    </div>  
+    <button type="submit" class="btn btn-primary" name ="button">Publish</button><!--   submits all content in this form tag -->  
+</form>
+
+
+
+<%- include("partials/footer"); -%>
+
+
+
+
+
+db.products.insertOne(
+   {
+    _id: 2,
+    name: "Pencil",
+    price: 0.80,
+    stock: 12 ,
+    reviews: [
+    {
+        authorName: "Sally",
+        rating: 5,
+        review: "Best rubber ever!"
+       }, 
+      {
+
+    authorName: "John",
+    rating: 5, 
+    review: "Awesome rubber!"
+     }
+    ]
+   }
+)

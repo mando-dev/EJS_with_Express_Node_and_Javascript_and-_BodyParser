@@ -1,0 +1,24 @@
+<%- include("partials/header"); -%>    <!-- in ejs we only use it for for loops or conditionals, you should be having too much javascript-->
+        <h1> Home</h1>
+        <p> <%=  startingContent   %>    </p>
+          <% console.log(posts); %>
+   
+
+       
+<%     posts.forEach(function(post){ %>  <!--   //    we are not using the [i] because we didnt write our traditional for loop, and we are using single form of post becsue thats the name of var defined in the forEach() -->
+        <h1><%=post.title%></h1>  <!-- we need to put our value of post.title in our h1 tag -->
+              <p>  
+              <%=post.content.substring(0,100) + "..."%>     <!--  we need to put our value of post.content in our p tag -->
+              <a href="/posts/<%=post.title%>">Read More</a>      
+          </p>                     <!-- the reason all posts are shown on top of each other is beacuse of the for loop-->     
+                                        <!--// this is how we tap into each element, and i will start at 0, the post array contains -->         
+<%      }) %>  <!-- append means add --> 
+
+
+
+
+
+  <%- include("partials/footer"); -%>   <!--knows already to look inside the views folder --> 
+
+
+  
